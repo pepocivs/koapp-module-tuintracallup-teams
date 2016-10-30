@@ -1,12 +1,14 @@
-<div ng-controller="tuintracallupCtrl" class="module tuintracallup">
+<div ng-controller="tuintracallupteamsCtrl" class="module tuintracallupteams">
 
   <div class='iframeLoading' ng-if="isBusy">
     <div class='transitionloader'>
     </div>
   </div>
+  <koa-toolbar>
+    <koa-icon-button icon="arrow-back" ng-click="backButton()"></koa-icon-button>
+  </koa-toolbar>
 
   <div role="listbox" ng-if="view === 'teams'">
-
     <koa-item ng-repeat="team in teams">
       <div class="avatar blue">
         <img width="60px" ng-src="{{team.shield[100]}}" item-icon>
@@ -17,9 +19,8 @@
         <div secondary>{{team.category}} {{team.gender}}</div>
       </koa-item-body>
 
-      <koa-button raised ng-click="selectGame('{{team._id}}')">{{ 'tuintra-callup.select-team' | translate }}</koa-button>
+      <koa-button raised ng-click="selectGame('{{team._id}}')">{{ 'tuintra-callup-teams.select-team' | translate }}</koa-button>
     </koa-icon-item>
-
   </div>
 
   <div ng-if="view === 'calendar'">

@@ -1,6 +1,6 @@
 {
   "name": "Tuintra Call Up",
-  "identifier": "tuintracallup",
+  "identifier": "tuintracallupteams",
   "icon": "touch-app",
   "type": "A",
   "version": "0.0.1",
@@ -28,27 +28,29 @@
   "price": 0,
   "canContain": false,
   "images" : {
-    "list" : "modules/tuintracallup/images/tuintra-callup_list.png",
+    "list" : "modules/tuintracallupteams/images/tuintra-callup_list.png",
     "screenshots" : [
-      "modules/tuintracallup/images/tuintra-callup_screenshot001.jpg",
-      "modules/tuintracallup/images/tuintra-callup_screenshot002.jpg",
-      "modules/tuintracallup/images/tuintra-callup_screenshot003.jpg"
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot001.jpg",
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot002.jpg",
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot003.jpg"
     ],
-    "popover" : "modules/tuintracallup/images/tuintra-callup_popover.png",
-    "banner" : "modules/tuintracallup/images/tuintra-callup_popover.png",
-    "logo" : "modules/tuintracallup/images/tuintra-callup_icon.png"
+    "popover" : "modules/tuintracallupteams/images/tuintra-callup_popover.png",
+    "banner" : "modules/tuintracallupteams/images/tuintra-callup_popover.png",
+    "logo" : "modules/tuintracallupteams/images/tuintra-callup_icon.png"
   },
   "showOn": {
     "menu": true,
     "market": true,
     "dragDrop": true
   },
-  "requires": {},
+  "requires": {
+    "out": ["tuintracallupgames"]
+  },
   "canContain": false,
-  "view": "modules/tuintracallup/index.html",
+  "view": "modules/tuintracallupteams/index.html",
   "files": [
-    "modules/tuintracallup/controller.js",
-    "modules/tuintracallup/style.css"
+    "modules/tuintracallupteams/controller.js",
+    "modules/tuintracallupteams/style.css"
   ],
   "libs": [
     {
@@ -56,6 +58,10 @@
       "src": "bower_components/moment/moment.js"
     }
   ],
-  "scope": {"some": "thing"},
+  "scope": {
+    "childrenUrl": {
+      "tuintracallupgames": ""
+    }
+  },
   "config": []
 }

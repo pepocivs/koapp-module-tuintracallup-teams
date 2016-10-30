@@ -2,15 +2,17 @@
   'use strict';
 
   angular
-    .controller('tuintracallupCtrl', loadFunction);
+    .controller('tuintracallupteamsCtrl', loadFunction);
 
   loadFunction.$inject = ['$http','$scope', '$rootScope', 'structureService', '$location', '$sce', '$filter', 'storageService'];
 
   function loadFunction($http, $scope, $rootScope, structureService, $location, $sce, $filter, storageService){
-    structureService.registerModule($location, $scope, 'tuintracallup');
+    structureService.registerModule($location, $scope, 'tuintracallupteams');
 
     $scope.view       = 'teams';
     $scope.selectGame = selectGame;
+    $scope.backButton = backButton;
+    $scope.isDefined  = isDefined;
 
     $rootScope.isBusy = true;
     init();
@@ -39,11 +41,19 @@
     }
 
     function selectGame(teamId) {
+      setView('calendar');
       $rootScope.isBusy = true;
       getGames(teamId);
-      $scope.view  = 'calendar';
     }
 
+    function backButton() {
+      $scope.view = angular.copy($scope.backLink);
+    }
+
+    function setView(goTo){
+      $scope.backLink = angular.copy($scope.view);
+      $scope.view     = goTo;
+    }
 
     function getGames(teamId) {
       $http.get('http://api.tuintra.com/public/'+$scope.domain+'/getCalendar?nDays=3&teamId='+teamId)
@@ -71,8 +81,9 @@
     }
 
     function showError(e){
-      $scope.tuintracallup.message = $filter('translate')('tuintra-callup.error-loading')+e;
+      $scope.tuintracallupteams.message = $filter('translate')('tuintra-callupteams.error-loading')+e;
       $rootScope.isBusy = false;
     }
+
   }
 }());
