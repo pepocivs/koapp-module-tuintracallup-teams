@@ -1,5 +1,5 @@
 {
-  "name": "Tuintra Call Up",
+  "name": "Tuintra Call Up Teams",
   "identifier": "tuintracallupteams",
   "icon": "touch-app",
   "type": "A",
@@ -52,12 +52,7 @@
     "modules/tuintracallupteams/controller.js",
     "modules/tuintracallupteams/style.css"
   ],
-  "libs": [
-    {
-      "bower": { "moment": "^2.11.2" },
-      "src": "bower_components/moment/moment.js"
-    }
-  ],
+  "libs": [],
   "scope": {
     "childrenUrl": {
       "tuintracallupgames": ""

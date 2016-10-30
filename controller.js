@@ -9,10 +9,7 @@
   function loadFunction($http, $scope, $rootScope, structureService, $location, $sce, $filter, storageService){
     structureService.registerModule($location, $scope, 'tuintracallupteams');
 
-    $scope.view       = 'teams';
     $scope.selectGame = selectGame;
-    $scope.backButton = backButton;
-    $scope.isDefined  = isDefined;
 
     $rootScope.isBusy = true;
     init();
@@ -41,27 +38,7 @@
     }
 
     function selectGame(teamId) {
-      setView('calendar');
-      $rootScope.isBusy = true;
-      getGames(teamId);
-    }
-
-    function backButton() {
-      $scope.view = angular.copy($scope.backLink);
-    }
-
-    function setView(goTo){
-      $scope.backLink = angular.copy($scope.view);
-      $scope.view     = goTo;
-    }
-
-    function getGames(teamId) {
-      $http.get('http://api.tuintra.com/public/'+$scope.domain+'/getCalendar?nDays=3&teamId='+teamId)
-        .success(function(data){
-          $scope.games      = data;
-          $rootScope.isBusy = false;
-        })
-        .error(showError);
+      $location.path($scope.tuintracallupteams.modulescope.childrenUrl.tuintracallupgames).search('teamId', teamId);
     }
 
     function getTeamFilter(teams) {

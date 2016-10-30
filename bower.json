@@ -10,7 +10,5 @@
   "license": "MIT",
   "homepage": "http://tuintra.com",
   "private": false,
-  "dependencies": {
-    "moment": "#^2.11.2"
-  }
+  "dependencies": {}
 }
