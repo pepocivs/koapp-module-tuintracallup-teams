@@ -1,0 +1,62 @@
+{
+  "name": "Tuintra Call Up Teams",
+  "identifier": "tuintracallupteams",
+  "icon": "touch-app",
+  "type": "A",
+  "version": "1.0.0",
+  "author": "Tuintra",
+  "description": {
+    "es-ES" : "Realiza convocatorias con tuintra",
+    "en-US" : "Make call ups with tuintra"
+  },
+  "descriptionShort": {
+    "es-ES" : "Realiza convocatorias con tuintra",
+    "en-US" : "Make call ups with tuintra"
+  },
+  "documentation": {
+    "es-ES": "# **(Como) ",
+    "en-US": "# **(How to) "
+  },
+  "category": [
+    "sports"
+  ],
+  "platforms" : [
+    "android",
+    "ios",
+    "windows"
+  ],
+  "price": 0,
+  "canContain": false,
+  "images" : {
+    "list" : "modules/tuintracallupteams/images/tuintra-callup_list.png",
+    "screenshots" : [
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot001.jpg",
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot002.jpg",
+      "modules/tuintracallupteams/images/tuintra-callup_screenshot003.jpg"
+    ],
+    "popover" : "modules/tuintracallupteams/images/tuintra-callup_popover.png",
+    "banner" : "modules/tuintracallupteams/images/tuintra-callup_popover.png",
+    "logo" : "modules/tuintracallupteams/images/tuintra-callup_icon.png"
+  },
+  "showOn": {
+    "menu": true,
+    "market": true,
+    "dragDrop": true
+  },
+  "requires": {
+    "out": ["tuintracallupgames"]
+  },
+  "canContain": false,
+  "view": "modules/tuintracallupteams/index.html",
+  "files": [
+    "modules/tuintracallupteams/controller.js",
+    "modules/tuintracallupteams/style.css"
+  ],
+  "libs": [],
+  "scope": {
+    "childrenUrl": {
+      "tuintracallupgames": ""
+    }
+  },
+  "config": []
+}

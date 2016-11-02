@@ -1,0 +1,14 @@
+{
+  "name": "koapp-module-tuintracallupteams",
+  "authors": "Tuintra",
+  "description": "tuintra callup module for King of App",
+  "keywords": [
+    "kingofapp",
+    "module",
+    "tuintra"
+  ],
+  "license": "MIT",
+  "homepage": "http://tuintra.com",
+  "private": false,
+  "dependencies": {}
+}
