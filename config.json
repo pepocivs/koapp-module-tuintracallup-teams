@@ -3,7 +3,7 @@
   "identifier": "tuintracallupteams",
   "icon": "touch-app",
   "type": "A",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Tuintra",
   "description": {
     "es-ES" : "Realiza convocatorias con tuintra",
