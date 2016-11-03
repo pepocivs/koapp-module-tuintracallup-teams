@@ -28,7 +28,7 @@
         teamFilter = getTeamFilter(userData.teams);
       }
 
-      $http.get('http://api.tuintra.com/public/'+$scope.domain+'/getTeams'+teamFilter)
+      $http.get('http://api.tuintra.com/'+$scope.domain+'/teams'+teamFilter)
         .success(function(data){
           $scope.teams      = data;
           $rootScope.isBusy = false;
