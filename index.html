@@ -19,7 +19,11 @@
         <div secondary>{{team.category}} {{team.gender}}</div>
       </koa-item-body>
 
-      <koa-button raised ng-click="selectGame('{{team._id}}')">{{ 'tuintra-callupteams.select-team' | translate }}</koa-button>
+      <koa-button raised ng-click="selectTeam('{{team._id}}')">{{ 'tuintra-callupteams.select-team' | translate }}</koa-button>
     </koa-icon-item>
   </div>
+  <div ng-if="tuintracallupteams.message">
+    {{tuintracallupteams.message}}
+  </div>
+
 </div>

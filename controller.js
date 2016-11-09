@@ -9,7 +9,7 @@
   function loadFunction($http, $scope, $rootScope, structureService, $location, $sce, $filter, storageService){
     structureService.registerModule($location, $scope, 'tuintracallupteams');
 
-    $scope.selectGame = selectGame;
+    $scope.selectTeam = selectTeam;
 
     $rootScope.isBusy = true;
     init();
@@ -21,23 +21,26 @@
     }
 
     function getInfo(data) {
-      var userData   = data.value.userInfo;
-      var teamFilter = '';
-      $scope.domain  = userData.domain;
-      if (!isAdmin(userData.permisions)) {
-        teamFilter = getTeamFilter(userData.teams);
-      }
+      if (!data) showError($filter('translate')('tuintra-callupteams.notloged'));
+      else {
+        var userData   = data.value.userInfo;
+        var teamFilter = '';
+        $scope.domain  = userData.domain;
+        if (!isAdmin(userData.permisions)) {
+          teamFilter = getTeamFilter(userData.teams);
+        }
 
-      $http.get('http://api.tuintra.com/'+$scope.domain+'/teams'+teamFilter)
-        .success(function(data){
-          $scope.teams      = data;
-          $rootScope.isBusy = false;
-        })
-        .error(showError);
+        $http.get('http://api.tuintra.com/'+$scope.domain+'/teams'+teamFilter)
+          .success(function(data){
+            $scope.teams      = data;
+            $rootScope.isBusy = false;
+          })
+          .error(showError);
+      }
 
     }
 
-    function selectGame(teamId) {
+    function selectTeam(teamId) {
       $location.path($scope.tuintracallupteams.modulescope.childrenUrl.tuintracallupgames).search('teamId', teamId);
     }
 
@@ -58,7 +61,7 @@
     }
 
     function showError(e){
-      $scope.tuintracallupteams.message = $filter('translate')('tuintra-callupteams.error-loading')+e;
+      $scope.tuintracallupteams.message = e;
       $rootScope.isBusy = false;
     }
 
